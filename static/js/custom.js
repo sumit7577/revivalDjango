@@ -129,4 +129,8 @@ for(let i of imageButtons){
 		textElement.appendChild(location);
 		overlay[0].appendChild(textElement);
 	})
-}
+};
+
+document.getElementById("registerButton").addEventListener("click",()=>{
+	window.location = "/register";
+})

@@ -24,5 +24,6 @@ admin.site.site_title = "Admin panel"
 admin.site.index_title = "Admin Panel"
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",views.home)
+    path("",views.home),
+    path("register",views.register)
 ]+static(settings.MEDIA_URL,document_root= settings.MEDIA_ROOT)

@@ -29,14 +29,6 @@ class Fighter(models.Model):
         return self.name
 
 
-class promoters(models.Model):
-    image = models.ImageField(upload_to="sponsor",blank=False)
-    name = models.CharField(max_length=30,default="",unique=True,blank=False)
-
-    def __str__(self) -> str:
-        return self.name
-
-
 class Club(models.Model):
     name = models.CharField(max_length=30,default="",unique=True,blank=False)
     image = models.ImageField(upload_to="clubs",blank=True)
@@ -44,3 +36,22 @@ class Club(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+class Registration(models.Model):
+    firstname = models.CharField(max_length=30,default="",unique=False,blank=False)
+    lastname = models.CharField(max_length=30,default="",unique=False,blank=False)
+    height = models.IntegerField(default=0,unique=False,blank=False)
+    weight = models.IntegerField(default=0,unique=False,blank=False)
+    date = models.DateField(default=timezone.now(),blank=False)
+    age = models.IntegerField(default=0,unique=False,blank=False)
+    number = models.IntegerField(default=0,unique=False,blank=False)
+    email = models.CharField(max_length=40,default="",unique=True,blank=False)
+    coach = models.CharField(max_length=40,default="",unique=False,blank=False)
+    gym = models.CharField(max_length=40,default="",unique=False,blank=False)
+    frequency = models.IntegerField(default=0,unique=False,blank=False)
+    experience = models.IntegerField(default=0,unique=False,blank=False)
+    uniqueId = models.CharField(blank=False,unique=True,max_length=200)
+
+
+    def __str__(self) -> str:
+        return self.firstname

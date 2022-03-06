@@ -117,10 +117,15 @@
 			}
 		</style>
 
+
 		<!--Modals-->
 		<!-- Fighter Modal -->
 
 			<!-- Modal -->
+			
+
+<!-- create an empty container for all of our modals -->
+		<div class="modals-container"></div>
 			
 		<!--Fighter Modal End-->
 
@@ -168,7 +173,7 @@
 										<div class="col-sm-12">
 											<div class="single-welcome-hero">
 												<div class="welcome-hero-img">
-													<img src="static/images/ion/DSC09093.JPG" alt="slider image" style="height: 70%; width:100%;">
+													<img src="static/images/ion/DSC09163.JPG" alt="slider image" style="height: 70%; width:100%;">
 												</div><!--/.welcome-hero-txt-->
 											</div><!--/.single-welcome-hero-->
 										</div><!--/.col-->
@@ -187,7 +192,7 @@
 										<div class="col-sm-12">
 											<div class="single-welcome-hero">
 												<div class="welcome-hero-img">
-													<img src="static/images/ion/DSC09085.JPG" alt="slider image" style="height: 70%; width:100%;">
+													<img src="static/images/ion/DSC09971.JPG" alt="slider image" style="height: 70%; width:100%;">
 												</div><!--/.welcome-hero-txt-->
 											</div><!--/.single-welcome-hero-->
 										</div><!--/.col-->
@@ -208,23 +213,20 @@
 				    <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" id='navbarMain' data-minus-value-mobile="50" data-speed="1000">
 
 				        <!-- Start Top Search -->
-				        <div class="top-search">
-				            <div class="container">
-				                <div class="input-group">
-				                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
-				                    <input type="text" class="form-control" placeholder="Search">
-				                    <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-				                </div>
-				            </div>
-				        </div>
+
 				        <!-- End Top Search -->
+
 
 				        <div class="container">            
 				            <!-- Start Atribute Navigation -->
 				            <div class="attr-nav">
 				                <ul>
 				                	<li class="search">
-				                		<a href="#"><span class="lnr lnr-magnifier"></span></a>
+				        			<button type="button" id="registerButton" class="btn btn-info" style="
+									margin-top: 1.3rem;
+									width: 120px;
+									height: 40px;
+								">Register</button>
 				                	</li><!--/.search-->
 				                </ul>
 				            </div><!--/.attr-nav-->
@@ -564,6 +566,7 @@ Find out when the next countdown begins, sign-up to our newsletter to be the fir
 		<!-- Include all js compiled plugins (below), or include individual files as needed -->
 
 		<script src="static/js/jquery.js"></script>
+		<script src="static/js/modal.min.js"></script>
         <!--modernizr.min.js-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 		
