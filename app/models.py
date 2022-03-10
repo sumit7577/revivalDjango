@@ -1,4 +1,3 @@
-
 from django.db import models
 from django.utils import timezone
 
@@ -55,3 +54,10 @@ class Registration(models.Model):
 
     def __str__(self) -> str:
         return self.firstname
+
+class Sponsor(models.Model):
+    title = models.CharField(max_length=30,default="",blank=True,unique=True)
+    filename = models.ImageField(blank=False,upload_to="sponsor")
+
+    def __str__(self) -> str:
+        return self.title

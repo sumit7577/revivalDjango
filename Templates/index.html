@@ -488,8 +488,23 @@ Find out when the next countdown begins, sign-up to our newsletter to be the fir
 		<!--blog end -->
 
 		<!-- clients strat -->
+		{{ sponsor.length }}
+		<section id="clients"  class="clients">
+			<div class="container">
+				<div class="owl-carousel owl-theme" id="client">
+					{% for i in sponsor %}
+						<div class="item" style="margin-left: 15px;">
+							<a href="#">
+								<img src="Files/{{i.filename}}" alt="brand-image" style="max-height:200px;" />
+							</a>
+						</div><!--/.item-->
+					{% endfor %}
+						
+					</div><!--/.owl-carousel-->
 
-		
+			</div><!--/.container-->
+
+		</section>
 		<!--/.clients-->	
 		<!-- clients end -->
 
