@@ -61,3 +61,10 @@ class Sponsor(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+class Homebanner(models.Model):
+    title = models.CharField(max_length=30,default="",blank=True,unique=True)
+    filename = models.ImageField(blank=False,upload_to="sponsor")
+
+    def __str__(self) -> str:
+        return self.title

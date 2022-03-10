@@ -164,7 +164,7 @@
 						</div><!-- /.single-slide-item-->
 
 					</div><!-- /.item .active-->
-
+					{% for i in homebanner %}
 					<div class="item pics">
 						<div class="single-slide-item slide2">
 							<div class="container-fluid">
@@ -173,7 +173,7 @@
 										<div class="col-sm-12">
 											<div class="single-welcome-hero">
 												<div class="welcome-hero-img">
-													<img src="static/images/logo/IMG_0720.JPG" alt="slider image" style="height: 70%; width:100%;">
+													<img src="Files/{{i.filename}}" alt="slider image" style="height: 70%; width:100%;">
 												</div><!--/.welcome-hero-txt-->
 											</div><!--/.single-welcome-hero-->
 										</div><!--/.col-->
@@ -183,25 +183,8 @@
 						</div><!-- /.single-slide-item-->
 
 					</div><!-- /.item .active-->
+					{% endfor %}
 
-					<div class="item pics">
-						<div class="single-slide-item slide3">
-							<div class="container-fluid">
-								<div class="welcome-hero-content">
-									<div class="row">
-										<div class="col-sm-12">
-											<div class="single-welcome-hero">
-												<div class="welcome-hero-img">
-													<img src="static/images/ion/DSC09163.JPG" alt="slider image" style="height: 70%; width:100%;">
-												</div><!--/.welcome-hero-txt-->
-											</div><!--/.single-welcome-hero-->
-										</div><!--/.col-->
-									</div><!--/.row-->
-								</div><!--/.welcome-hero-content-->
-							</div><!-- /.container-->
-						</div><!-- /.single-slide-item-->
-						
-					</div><!-- /.item .active-->
 				</div><!-- /.carousel-inner-->
 
 			</div><!--/#header-carousel-->
@@ -250,7 +233,8 @@
 				                    <li class=" scroll active"><a href="#home">Home</a></li>
 				                    <li class="scroll"><a href="#fighters">Fighters</a></li>
 				                    <li class="scroll"><a href="#clubs">Clubs</a></li>
-				                    <li class="scroll"><a href="#events">Events</a></li>
+				                    <li class="scroll"><a href="#events">Events</a>
+									</li><li class="scroll"><a href="#clients">Sponsors</a></li>
 									<li class="scroll"><a href="#gallery">Gallery</a></li>
 									<li class="scroll"><a href="#about-us">About Us</a></li>
 				                </ul><!--/.nav -->
@@ -488,7 +472,9 @@ Find out when the next countdown begins, sign-up to our newsletter to be the fir
 		<!--blog end -->
 
 		<!-- clients strat -->
-		{{ sponsor.length }}
+		<div class="section-header">
+			<h2>Sponsors</h2>
+		</div><!--/.section-header-->
 		<section id="clients"  class="clients">
 			<div class="container">
 				<div class="owl-carousel owl-theme" id="client">
