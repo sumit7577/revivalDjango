@@ -1,3 +1,5 @@
+from email.errors import MessageError
+from urllib.request import Request
 from django.shortcuts import redirect, render
 import os
 from revivalDjango import settings
@@ -8,7 +10,7 @@ from django.core.mail import send_mail
 host_email = "contact@bilsha.co.uk"
 host_password = "Twins2010"
 def home(request):
-    #send_mail('test','some message',host_email,['asmitkumarr082@gmail.com'],fail_silently=False,auth_user=host_email,auth_password=host_password)
+    #send_mail('test','some message',host_email,[host_email],fail_silently=False,auth_user=host_email,auth_password=host_password)
     eventData = Event.objects.all()
     fighterData = Fighter.objects.all()
     clubData = Club.objects.all()
@@ -60,3 +62,26 @@ def register(request):
         
 
     return render(request,"register.html")
+
+
+def contact(request):
+    message = None
+    success = False
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email= request.POST.get("email")
+        message = request.POST.get("message")
+        if (name is not None) and (email is not None) and (message is not None):
+            try:
+                send_mail("Contact",message="Name: "+name+"\n"+"Email: "+email+"\n"+"Message: "+message,from_email=host_email,recipient_list=['sumitkumarr082@gmail.com'],fail_silently=False,auth_user=host_email,auth_password=host_password)
+                message = "Email Sent successfull!"
+                success = True
+            except Exception as e:
+                message = "Email Not Sent"
+                success = False
+                return render(request,"contact.html",{"message":message,"success":success})
+        else:
+            message = "Please fill up the form Correctly!"
+            success = False
+            return render(request,"contact.html",{"message":message,"success":success})
+    return render(request,"contact.html",{"message":message,"success":success})
