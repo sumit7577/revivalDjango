@@ -76,6 +76,7 @@ def contact(request):
                 send_mail("Contact",message="Name: "+name+"\n"+"Email: "+email+"\n"+"Message: "+message,from_email=host_email,recipient_list=[host_email],fail_silently=False,auth_user=host_email,auth_password=host_password)
                 message = "Email Sent successfull!"
                 success = True
+                return render(request,"contact.html",{"message":message,"success":success})
             except Exception as e:
                 message = "Email Not Sent"
                 success = False

@@ -266,8 +266,12 @@ button, input[type="submit"], input[type="reset"] {
 <script>
   var message = "{{message}}"
   var succes = '{{success}}'
+  success();
   var alerts = document.getElementById("alertMessage");
-  alerts.style.display = "none";
+  if(message == ""){
+    alerts.style.display = "none";
+  }
+ 
   
   function success(){
     var alerts = document.getElementById("alertMessage");
@@ -276,7 +280,7 @@ button, input[type="submit"], input[type="reset"] {
     }
     else{
       alerts.style.display = "block";
-      if(succes == true){
+      if(succes == "True"){
         window.location = "/";
       }
     }

@@ -229,12 +229,15 @@ button, input[type="submit"], input[type="reset"] {
 <script>
   var message = "{{message}}"
   var succes = '{{success}}';
+  success();
   var alerts = document.getElementById("alertMessage");
-  alerts.style.display = "none";
-  
+  if(message == "None"){
+    alerts.style.display = "none";
+  }
+
+
   function success(){
     var alerts = document.getElementById("alertMessage");
-    console.log(message);
     if(message === "None"){
       alerts.style.display = "none";
     }
