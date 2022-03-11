@@ -73,7 +73,7 @@ def contact(request):
         message = request.POST.get("message")
         if (name is not None) and (email is not None) and (message is not None):
             try:
-                send_mail("Contact",message="Name: "+name+"\n"+"Email: "+email+"\n"+"Message: "+message,from_email=host_email,recipient_list=['sumitkumarr082@gmail.com'],fail_silently=False,auth_user=host_email,auth_password=host_password)
+                send_mail("Contact",message="Name: "+name+"\n"+"Email: "+email+"\n"+"Message: "+message,from_email=host_email,recipient_list=[host_email],fail_silently=False,auth_user=host_email,auth_password=host_password)
                 message = "Email Sent successfull!"
                 success = True
             except Exception as e:
