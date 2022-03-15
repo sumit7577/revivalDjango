@@ -428,53 +428,21 @@ Find out when the next countdown begins, sign-up to our newsletter to be the fir
 					<h2>Gallery</h2>
 				</div><!--/.section-header-->
 				<div class="blog-content">
-					<div style="display: flex; overflow-x:scroll;">
-						{% for i in photos %}
-							{% for k in i.Thierry %}
+					{% for i in photos %}
+					<div style="display: flex;">
+							{% for k in i %}
 						<div class="col" style="min-height: 200px; min-width: 300px; margin-left: 8px; padding: 4px;">
 							<div class="single-blog">
 								<div class="single-blog-img">
-									<img src="static/images/Thierry/{{k}}" alt="blog image" style="height:200px; width:300px;">
+									<img src="static/images/events/{{k}}" alt="blog image" style="height:200px; width:300px;">
 									<div class="single-blog-img-overlay"></div>
 								</div>
 							</div>
 						</div>
 						{% endfor %}
-							{% endfor %}
-
+							
 					</div>
-
-					<div style="display: flex; overflow-x:scroll;">
-						{% for i in photos %}
-							{% for k in i.Victor %}
-						<div class="col" style="min-height: 200px; min-width: 300px; margin-left: 8px; padding: 4px;">
-							<div class="single-blog">
-								<div class="single-blog-img">
-									<img src="static/images/Victor/{{k}}" alt="blog image" style="height:200px; width:300px;">
-									<div class="single-blog-img-overlay"></div>
-								</div>
-							</div>
-						</div>
-						{% endfor %}
-							{% endfor %}
-
-					</div>
-
-					<div style="display: flex; overflow-x:scroll;">
-						{% for i in photos %}
-							{% for k in i.exhibtion %}
-						<div class="col" style="min-height: 200px; min-width: 300px; margin-left: 8px; padding: 4px;">
-							<div class="single-blog">
-								<div class="single-blog-img">
-									<img src="static/images/exhibtion/{{k}}" alt="blog image" style="height:200px; width:300px;">
-									<div class="single-blog-img-overlay"></div>
-								</div>
-							</div>
-						</div>
-						{% endfor %}
-							{% endfor %}
-
-					</div>
+					{% endfor %}
 
 				</div>
 			</div><!--/.container-->

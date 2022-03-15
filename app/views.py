@@ -1,14 +1,15 @@
-from email.errors import MessageError
-from urllib.request import Request
 from django.shortcuts import redirect, render
 import os
 from revivalDjango import settings
 from .models import Event,Fighter,Club,Registration,Sponsor,Homebanner
 from django.core.mail import send_mail
+import math
 
 # Create your views here.
 host_email = "contact@bilsha.co.uk"
 host_password = "Twins2010"
+
+
 def home(request):
     #send_mail('test','some message',host_email,[host_email],fail_silently=False,auth_user=host_email,auth_password=host_password)
     eventData = Event.objects.all()
@@ -16,13 +17,29 @@ def home(request):
     clubData = Club.objects.all()
     sponsorData = Sponsor.objects.all()
     bannerData = Homebanner.objects.all()
-    all_files = []
-    directory_name = os.listdir(os.path.join(settings.BASE_DIR,"static/images"))
-    for i in directory_name:
-        loop = os.listdir(os.path.join(settings.BASE_DIR,f"static/images/{i}"))
-        all_files.append({i:loop})
+    allImages = os.listdir(os.path.join(settings.BASE_DIR,f"static/images/events"))
+    photos = []
+    length = math.ceil(len(allImages) /4)
+    for i in range(0,length):
+        photos.append([])
+    counter = 0
+    index = 0
+    
+    for i in allImages:
+        counter +=1
+        if(counter <= 4):
+            try:
+                photos[index].append(i)
+            except Exception as e:
+                print(e)
+        
+        else:
+            index += 1
+            counter = 0
 
-    return render(request,"index.html",{"events":eventData,"fighter":fighterData,"photos":all_files,"club":clubData,"sponsor":sponsorData,"homebanner":bannerData})
+
+
+    return render(request,"index.html",{"events":eventData,"fighter":fighterData,"photos":photos,"club":clubData,"sponsor":sponsorData,"homebanner":bannerData})
 
 def register(request):
     if request.method == "POST":
