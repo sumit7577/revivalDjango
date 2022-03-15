@@ -87,6 +87,7 @@
 				font-family: 'League Spartan', sans-serif;
 				font-size: 18px;
 			}
+			
 			th img{
 				max-width: none;
 			}
@@ -427,10 +428,9 @@ Find out when the next countdown begins, sign-up to our newsletter to be the fir
 				<div class="section-header">
 					<h2>Gallery</h2>
 				</div><!--/.section-header-->
-				<div class="blog-content">
-					{% for i in photos %}
-					<div style="display: flex;">
-							{% for k in i %}
+				{% for i in photos %}
+					<div class="container-fluid" style="display: flex; overflow-x:scroll;">
+						{% for k in i %}
 						<div class="col" style="min-height: 200px; min-width: 300px; margin-left: 8px; padding: 4px;">
 							<div class="single-blog">
 								<div class="single-blog-img">
@@ -439,13 +439,10 @@ Find out when the next countdown begins, sign-up to our newsletter to be the fir
 								</div>
 							</div>
 						</div>
-						{% endfor %}
-							
+							{% endfor %}
 					</div>
-					{% endfor %}
-
-				</div>
-			</div><!--/.container-->
+				{% endfor %}
+			</div>
 			
 		</section><!--/.blog-->
 		<!--blog end -->

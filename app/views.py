@@ -37,8 +37,6 @@ def home(request):
             index += 1
             counter = 0
 
-
-
     return render(request,"index.html",{"events":eventData,"fighter":fighterData,"photos":photos,"club":clubData,"sponsor":sponsorData,"homebanner":bannerData})
 
 def register(request):
