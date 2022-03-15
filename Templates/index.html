@@ -77,10 +77,18 @@
 				.reg{
 					margin-top: 1.3rem!important;
 				}
+
+				.fighterImage{
+					height: 300px!important;
+					width: 280px!important;
+				}
 			}
 			td,th{
 				font-family: 'League Spartan', sans-serif;
 				font-size: 18px;
+			}
+			th img{
+				max-width: none;
 			}
 
 			h2{
@@ -287,7 +295,7 @@
 							<tbody style="padding-left: 8px;">
 								{% for i in fighter %}
 							  <tr>
-								<th scope="row"><img src="Files/{{i.image}}" style="height: 300px; width: 300px; object-fit: contain;"></th>
+								<th scope="row"><img src="Files/{{i.image}}" class="fighterImage" style="height: 150px; width: 150px; object-fit: contain;"></th>
 								<th scope="row">{{ i.ranking }}</th>
 								<td>{{ i.name }}</td>
 								<td>{{ i.fights }}</td>
